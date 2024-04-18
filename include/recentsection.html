@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .cardtext {
+        margin-left: 5%;
+        margin-top: 40px;
+        font-size: 30px;
+        color: #df5e34;
+        font-family: "Raleway", sans-serif;
+    }
+
+    /* Add horizontal line styles */
+    .line {
+        border-top: 1.5px solid #cfcdcd;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 5%;
+    }
+    /* Card styles */
+    .card-container {
+        display: flex;
+        overflow-x: scroll;
+        padding: 20px;
+        width: calc(100% - 5%); /* Adjust the width calculation to account for the left margin */
+        margin-left: 3.5%; /* Add margin only to the left */
+        scroll-snap-type: x mandatory;
+    }
+
+    .card {
+        flex: 0 0 250px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        margin-right: 20px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: box-shadow 0.3s, transform 0.3s;
+        cursor: pointer;
+    }
+
+    .card img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .card h6 {
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .card p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .card-container::-webkit-scrollbar {
+        height: 3.5px;
+        background-color: rgb(179, 179, 179);
+    }
+
+    .card-container::-webkit-scrollbar-thumb,
+    .card-container::-webkit-scrollbar-track {
+        border-radius: 92px;
+    }
+
+    .card-container::-webkit-scrollbar-thumb {
+        background: #dc6249;
+    }
+
+    .card-container::-webkit-scrollbar-track {
+        background: var(--thumb);
+    }
+
+    /* Hover animation */
+    .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-8px);
+    }
+
+    .card:hover .text-left.pt-2.pl-2 {
+        color: #dc6249;
+    }
+</style>
+
+<script>
+    // JavaScript code for scrollable card view
+    document.addEventListener("DOMContentLoaded", function () {
+        var container = document.querySelector(".card-container");
+        var isMouseDown = false;
+        var startX, scrollLeft;
+
+        container.addEventListener("mousedown", function (e) {
+            isMouseDown = true;
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+        });
+
+        container.addEventListener("mouseleave", function () {
+            isMouseDown = false;
+        });
+
+        container.addEventListener("mouseup", function () {
+            isMouseDown = false;
+        });
+
+        container.addEventListener("mousemove", function (e) {
+            if (!isMouseDown) return;
+            e.preventDefault();
+            var x = e.pageX - container.offsetLeft;
+            var walk = (x - startX) * 2; // Adjust scrolling speed here
+            container.scrollLeft = scrollLeft - walk;
+        });
+    });
+</script>
+
+</head>
+<body>
+    <!--Text For Card View-->
+    <p class="cardtext">Recently Added</p>
+    <hr class="line">
+
+    <!-- Card view for product display -->
+    <div class="col-md-8">
+        <div class="card-container demo-scroll mb-5">
+          
+            <div class="card">
+                <img src="https://cdn.shopify.com/s/files/1/0576/9402/7836/products/Red-Kidney-Beans-25kg_89251a78-fc2b-4951-96a5-3829154a2f37.png?v=1660254622&width=360" alt="Card image cap">
+                <h6 class="text-left pt-2 pl-2">Flax Seeds</h6>
+                <p class="card-text text-left pl-2 pr-2 comment">Packed with loads of nutrients, fiber, and high amount of Omega-3 fatty acids, that profoundly benefits your body and mind.</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn.shopify.com/s/files/1/0576/9402/7836/products/Whole-Mung-Beans-Large-25kg_e54cfb45-3f8f-4877-989c-55f15b4dda0b.png?v=1660254626&width=360" alt="Card image cap">
+                <h6 class="text-left pt-2 pl-2 pr-2">Muesli</h6>
+                <p class="card-text text-left pl-2 pr-2 comment">A wholesomeness of Fruits and Nuts packed with nutrients and flavour to kick off your day.</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn.shopify.com/s/files/1/0576/9402/7836/products/White-Beans-25kg.png?v=1660254624&width=360" alt="Card image cap">
+                <h6 class="text-left pt-2 pl-2 pr-2">Choco Plus</h6>
+                <p class="card-text text-left pl-2 pr-2 comment">Wheat-based cereal with wholegrain goodness and a delightful chocolaty flavor.</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn.shopify.com/s/files/1/0576/9402/7836/products/Whole-Mung-Beans-Small-25kg_1559d253-b2fe-4ea4-af9e-efb67f624985.png?v=1660254637&width=360" alt="Card image cap">
+                <h6 class="text-left pt-2 pl-2 pr-2">Oats</h6>
+                <p class="card-text text-left pl-2 pr-2 comment">Gluten-free whole grain oats full of essential vitamins, minerals, fiber, and antioxidants to keep your energy levels up.</p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

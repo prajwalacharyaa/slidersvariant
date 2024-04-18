@@ -1,0 +1,112 @@
+<style>
+    .product-card-slider {
+      padding: 1rem 0;
+    }
+    
+    .product-slider-container {
+      padding: 1rem;
+    }
+    
+    .product-slider {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    
+    .product-card {
+      flex: 0 0 calc(50% - 0.5rem);
+      width: 200px;
+      border-radius: 0.5rem;
+      background-color: #fff;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .product-card:hover {
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    }
+    
+    .product-card img {
+      width: 100%;
+      max-width: 400px; /* Set maximum width */
+      height: auto;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      transition: filter 0.3s ease; /* Add transition */
+    }
+    
+    .product-card:hover img {
+      filter: brightness(0.8); /* Make the image darker */
+    }
+    
+    .product-card-content {
+      padding: 0.75rem;
+    }
+    
+    .product-card-content h3 {
+      margin: 0;
+      font-size: 1rem;
+      text-decoration: underline;
+    }
+    
+    .product-card-content p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: #888;
+    }
+    
+    /* Media queries */
+    @media (min-width: 768px) {
+      .product-card {
+        flex: 0 0 calc(25% - 0.75rem);
+      }
+    }
+    @media (min-width: 768px) {
+      .product-card img {
+        height: 400px;
+      }
+    }
+    </style>
+    
+    <!-- Text For Card View -->
+    <p class="cardtext">Collections</p>
+    <hr class="line">
+    
+    <div class="product-card-slider">
+      <div class="product-slider-container">
+        <div class="product-slider">
+          <div class="product-card">
+            <img src="image/product/rice.png" alt="Product Image">
+            <div class="product-card-content">
+              <h3>Collection 1</h3>
+              <p>This is a collection of rice, grains, etc.</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="image/product/rice.png" alt="Product Image">
+            <div class="product-card-content">
+              <h3>Vegetable Collection</h3>
+              <p>Buy vegetables, fresh and healthy.</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="image/product/rice.png" alt="Product Image">
+            <div class="product-card-content">
+              <h3>Grains Collection</h3>
+              <p>You can search and buy the grains of your choice.</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="image/product/rice.png" alt="Product Image">
+            <div class="product-card-content">
+              <h3>Other Collections</h3>
+              <p>There might be any number of collections of products you might be interested in.</p>
+            </div>
+          </div>
+          <!-- Add more product cards here -->
+        </div>
+      </div>
+    </div>
+    
