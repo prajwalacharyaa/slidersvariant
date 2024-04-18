@@ -1,0 +1,106 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+    .products-section {
+        background-color: #df5e34;
+        color: #fff;
+        padding: 60px 0;
+        margin-top: 50px;
+    }
+
+    .text-side {
+        width: 100%;
+        padding-left: 20px;
+        cursor: default;
+    }
+
+    .text-side h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .text-side p {
+        font-size: 18px;
+        line-height: 1.5;
+        font-family: Arial, sans-serif;
+        margin-left: 15px;
+        text-align: justify;
+    }
+
+    .image-side {
+        display: none;
+    }
+
+    .row-reverse {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .btn {
+        background-color: #fff;
+        color: #df5e34;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 16px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: black;
+        color: white;
+    }
+
+    .arrow-right {
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .text-side {
+            width: 30%;
+        }
+
+        .image-side {
+            width: 70%;
+            text-align: right;
+            display: block;
+        }
+    }
+</style>
+
+<section class="products-section">
+    <div class="container">
+        <div class="row-reverse">
+            <div class="image-side">
+                <img src="image/product/rice.png" alt="Product Image">
+                <img src="image/product/rice.png" alt="Product Image">
+            </div>
+            <div class="text-side">
+                <h2>PRODUCTS</h2>
+                <p class="ptext">Organic food, ecological food, or biological food are 
+                    foods and drinks produced by methods complying with the 
+                    standards of organic farming. Standards vary worldwide, 
+                    but organic farming features practices that cycle resources, 
+                    promote ecological balance, and conserve biodiversity. <br><br>Organic food, ecological food, or biological food are 
+                    foods and drinks produced by methods complying with the 
+                    standards of organic farming.</p>
+                <div class="button-container">
+                    <a href="#" class="btn">
+                        Click to know more
+                        <i class="fa fa-long-arrow-right arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        /* Container styles */
+        .container {
+            padding: 0 5%;
+            overflow: hidden;
+            /* Prevent scroll bar */
+        }
+
+        /* Slider styles */
+        .swiper-container {
+            width: 100%;
+            height: 400px;
+            background-color: #f5f5f5;
+            position: relative;
+            border-radius: 20px;
+            /* Added border-radius */
+            overflow: hidden;
+            /* Added overflow */
+        }
+
+        .swiper-slide {
+            position: relative;
+            text-align: left;
+            /* Align text to left */
+            display: flex;
+            justify-content: flex-start;
+            /* Align content to the left */
+            align-items: flex-start;
+            /* Align items to the top */
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #fff;
+            /* Added text color */
+            font-family: Arial, sans-serif;
+            /* Added font-family for paragraph text */
+        }
+
+        .swiper-slide h2 {
+            font-size: 36px;
+            /* Increased font size */
+            margin-bottom: 10px;
+            font-family: 'Times New Roman', serif;
+            /* Added font-family for "Pure Everest" */
+        }
+
+        .swiper-slide p {
+            font-size: 18px;
+            color: #ccc;
+            /* Adjusted text color for better visibility */
+        }
+
+        /* Pagination styles */
+        .swiper-pagination {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 1.5px;
+            /* Changed height to create a line */
+            background-color: #c1bebe;
+            opacity: 0.7;
+            display: inline-block;
+            margin: 0 5px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #fff;
+            /* Changed color to white */
+            opacity: 1;
+        }
+
+        .swiper-container:hover .swiper-button-next,
+        .swiper-container:hover .swiper-button-prev {
+            opacity: 1;
+        }
+
+        /* Darken the images */
+        .swiper-slide:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Adjusted the opacity to darken the images */
+            z-index: 1;
+        }
+
+        /* Make text appear brighter */
+        .swiper-slide-text {
+            position: relative;
+            z-index: 2;
+            width: 40%;
+            /* Set width to 20% */
+            margin-top: 40px;
+            padding: 40px;
+            /* Added padding for spacing */
+        }
+
+        /* Make text appear center in smaller displays and full width in larger displays */
+        @media screen and (max-width: 768px) {
+            .swiper-slide-text {
+                width: 100%;
+                /* Set width to 100% for smaller displays */
+                text-align: center;
+                /* Align text to center for smaller displays */
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            .swiper-slide-text {
+                width: 45%;
+                /* Set width to 45% for larger displays */
+                margin-top: 40px;
+                padding: 40px;
+                /* Added padding for spacing */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Slider -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1437750769465-301382cdf094?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80');">
+                    <div class="swiper-slide-text">
+                        <h2>PureEverest</h2>
+                        <p>Welcome to Pure Everest, bring your desired product home.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1464454709131-ffd692591ee5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80');">
+                    <div class="swiper-slide-text">
+                        <h2>Variety</h2>
+                        <p>Lots of options to choose from.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');">
+                    <div class="swiper-slide-text">
+                        <h2>PureEverest</h2>
+                        <p>Select from wide range of products.</p>
+                    </div>
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>
